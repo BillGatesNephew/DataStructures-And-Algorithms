@@ -1,7 +1,7 @@
 
 public class BinarySearch {
 	
-	/* Basic Binary Search Implementation */
+	/* Binary Search Implementation */
 
 	/* Algorithm Steps
 	 * -------------------
@@ -14,20 +14,26 @@ public class BinarySearch {
 	 * 7. Return index
 	 */
 	
-	public int search(int[] arr, int val){
-		int ind = -1; 
-		
+	public int search(int[] arr, int val)
+	{
+		int ind = -1; 	
 		int high = arr.length - 1;
 		int low = 0; 
 		int mid = arr.length / 2; 
 		
-		while(high >= low && ind == -1){
-			if(arr[mid] == val){
+		while(high >= low && ind == -1)
+		{
+			if(arr[mid] == val)
+			{
 				ind = mid; 
-			} else if(arr[mid] > val){
+			} 
+			else if(arr[mid] > val)
+			{
 				high = mid - 1; 
 				mid = (high + low)/2;
-			} else {
+			} 
+			else 
+			{
 				low = mid + 1;
 				mid = (high + low)/2; 
 		    }
@@ -36,7 +42,8 @@ public class BinarySearch {
 		return ind; 
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args)
+	{
 		int[] arr = {1,4,8,12,24,42};
 		BinarySearch obj = new BinarySearch(); 
 		System.out.println(obj.search(arr, 42));
